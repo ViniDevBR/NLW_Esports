@@ -12,7 +12,7 @@ function App() {
 
       <div className= 'grid grid-cols-6 gap-6 mt-16 rounded-lg overflow-hidden'>
         <a href="" className= "relative rounded-lg overflow-hidden">
-          <img src="../public/image 1.png" alt="" />
+          <img src="/image 1.png" alt="" />
           <div className='w-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 right-0 left-0'>
             <strong className='font-bold text-white'>League of Legends</strong>
             <span className='text-zinc-300 text-sm block'>4 Anuncios</span>
@@ -20,7 +20,7 @@ function App() {
         </a>
 
         <a href="" className= "relative rounded-lg overflow-hidden">
-          <img src="../public/image 2.png" alt="" />
+          <img src="/image 2.png" alt="" />
           <div className='w-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 right-0 left-0'>
             <strong className='font-bold text-white'>Dota 2</strong>
             <span className='text-zinc-300 text-sm block'>4 Anuncios</span>
@@ -28,7 +28,7 @@ function App() {
         </a>
 
         <a href="" className= "relative rounded-lg overflow-hidden">
-          <img src="../public/image 3.png" alt="" />
+          <img src="/image 3.png" alt="" />
           <div className='w-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 right-0 left-0'>
             <strong className='font-bold text-white'>Counter Strike</strong>
             <span className='text-zinc-300 text-sm block'>4 Anuncios</span>
@@ -36,7 +36,7 @@ function App() {
         </a>
 
         <a href="" className= "relative rounded-lg overflow-hidden">
-          <img src="../public/image 5.png" alt="" />
+          <img src="/image 5.png" alt="" />
           <div className='w-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 right-0 left-0'>
             <strong className='font-bold text-white'>Apex</strong>
             <span className='text-zinc-300 text-sm block'>4 Anuncios</span>
@@ -44,7 +44,7 @@ function App() {
         </a>
 
         <a href="" className= "relative rounded-lg overflow-hidden">
-          <img src="../public/image 6.png" alt="" />
+          <img src="/image 6.png" alt="" />
           <div className='w-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 right-0 left-0'>
             <strong className='font-bold text-white'>Fortnite</strong>
             <span className='text-zinc-300 text-sm block'>4 Anuncios</span>
@@ -52,7 +52,7 @@ function App() {
         </a>
 
         <a href="" className= "relative rounded-lg overflow-hidden">
-          <img src="../public/image 7.png" alt="" />
+          <img src="/image 7.png" alt="" />
           <div className='w-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 right-0 left-0'>
             <strong className='font-bold text-white'>World of Warcraft</strong>
             <span className='text-zinc-300 text-sm block'>4 Anuncios</span>
