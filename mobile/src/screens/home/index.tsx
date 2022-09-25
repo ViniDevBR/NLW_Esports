@@ -1,13 +1,14 @@
 import { styles } from './styles';
-import { View, Image, FlatList, ScrollView } from 'react-native';
+import { Image, FlatList, ScrollView } from 'react-native';
 import logoImg from '../../assets/logo-nlw-esports.png';
 import { Heading } from '../../components/Heading';
 import { GameCards, GameCardsProps } from '../../components/GameCards';
 import { useEffect, useState } from 'react';
-import { response } from 'express';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 export function Home(){
-  const url = 'https://192.168.0.3:3333/games'
+  const url = 'http://192.168.0.3:3333/games'
   const [games, setGames] = useState<GameCardsProps[]>([])
   useEffect(() => {
     fetch(url)
@@ -16,7 +17,7 @@ export function Home(){
   },[])
   return (
     <ScrollView>
-      <View style = { styles.container }>
+      <SafeAreaView style = { styles.container }>
         <Image 
         source = { logoImg }
         style = { styles.logo }
@@ -29,15 +30,13 @@ export function Home(){
         data={games}
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
-          <GameCards
-            data={item}     
-          />
+          <GameCards data={item} />
           )}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.contentList}
         />
-      </View>
+      </SafeAreaView>
     </ScrollView>
   )
 }
