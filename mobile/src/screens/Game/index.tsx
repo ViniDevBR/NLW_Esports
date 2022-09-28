@@ -44,7 +44,7 @@ export function Game() {
           />
           <View style={styles.right}/>
         </View>  
-        {/* <ScrollView> */}
+        <ScrollView>
           <Image
             source={{uri: game.bannerUrl}}
             style={styles.cover}
@@ -64,7 +64,7 @@ export function Game() {
             showsHorizontalScrollIndicator={false}
             
           />
-        {/* </ScrollView>  */}
+        </ScrollView> 
 
 
         
