@@ -1,15 +1,20 @@
-import { SafeAreaView } from 'react-native-safe-area-context';
+//COMPONENTES
 import { Background } from '../../components/Background';
+import { Heading } from '../../components/Heading';
+import { DuoCard, DuoCardProps } from '../../components/DuoCard';
+
+//REACT 
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { useState, useEffect } from 'react';
+import { TouchableOpacity, View, Image, ScrollView, FlatList, Text } from 'react-native';
+
+//OUTROS
 import { styles } from './styles';
 import { GameParams } from '../../@types/navegation';
-import { TouchableOpacity, View, Image, ScrollView, FlatList, Text } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { THEME } from '../../theme';
 import logoImg from '../../assets/logo-nlw-esports.png'
-import { Heading } from '../../components/Heading';
-import { DuoCard, DuoCardProps } from '../../components/DuoCard';
 
 export function Game() {
   const navigation = useNavigation()
@@ -32,6 +37,8 @@ export function Game() {
   return (
     <Background>
       <SafeAreaView style={styles.container}>
+
+
         <View style={styles.header}>
           <TouchableOpacity onPress={returnHome}>
             <Entypo
@@ -62,23 +69,25 @@ export function Game() {
             title={game.title}
             subtitle='Conecte-se e comece a jogar!'
           />
-          <FlatList 
-            data={infos}
-            keyExtractor={item => item.id}
-            renderItem={({ item }) => (
-              <DuoCard 
-                onConnect={() => {}}
-                data={item}/>        
-            )}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={[styles.contentList, infos.length === 0 && {flex: 1}]}
-            ListEmptyComponent={() => (
-              <Text style={styles.emptyList}>
-                Não há anúncios publicados.
-              </Text>
-            )}
-          />
+          <View style={styles.containerView}>
+            <FlatList 
+              data={infos}
+              keyExtractor={item => item.id}
+              renderItem={({ item }) => (
+                <DuoCard 
+                  onConnect={() => {}}
+                  data={item}/>        
+              )}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={[styles.contentList, infos.length === 0 && {flex: 1}]}
+              ListEmptyComponent={() => (
+                <Text style={styles.emptyList}>
+                  Não há anúncios publicados.
+                </Text>
+              )}
+            />
+          </View>
         </ScrollView>        
       </SafeAreaView>
     </Background>
