@@ -28,13 +28,19 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     marginTop: 32,
   },
+  containerView: {
+    width: '100%'
+  },
   containerScroll: {
-    flex: 1
+    flex: 1,
+    width: '100%',
+    padding: 0
   },
   contentScroll: {
     alignItems: 'center'
   },
   contentList: {
+    alignSelf: 'flex-start',
     paddingHorizontal: 32,
     marginBottom: 30
   },
