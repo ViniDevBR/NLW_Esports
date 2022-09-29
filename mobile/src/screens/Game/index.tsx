@@ -2,6 +2,7 @@
 import { Background } from '../../components/Background';
 import { Heading } from '../../components/Heading';
 import { DuoCard, DuoCardProps } from '../../components/DuoCard';
+import { DuoMatch } from '../../components/DuoMatch'; 
 
 //REACT 
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -26,6 +27,8 @@ export function Game() {
   }
   
   const [infos, setInfos] = useState<DuoCardProps[]>([])
+  const [discordMatch, setDiscordMatch] = useState('vini')
+
   const url = `http://192.168.0.3:3333/games/${game.id}[0]/ads` /*HOUSE 1*/ 
   const url2 = `http://192.168.15.165:3333/games/${game.id}/ads` /*HOUSE 2*/
 
@@ -88,6 +91,11 @@ export function Game() {
               )}
             />
           </View>
+          <DuoMatch 
+            onClose={() => setDiscordMatch('')}
+            visible={discordMatch.length > 0}
+            discord='123321321123'
+          />
         </ScrollView>        
       </SafeAreaView>
     </Background>
