@@ -1,5 +1,9 @@
-import { StatusBar } from 'react-native';
+//COMPONENTES
 import { Background } from './src/components/Background';
+import { Loading } from './src/components/Loading';
+
+//REACT
+import { StatusBar } from 'react-native';
 import { 
   useFonts,
   Inter_400Regular,
@@ -8,7 +12,6 @@ import {
   Inter_900Black
 } from "@expo-google-fonts/inter";
 import { Routes } from './src/routes';
-import { Loading } from './src/components/Loading';
 
 export default function App() {
   const [fontsLoaded] = useFonts({

@@ -1,12 +1,17 @@
-import { styles } from './styles';
-import { Image, FlatList, ScrollView } from 'react-native';
-import logoImg from '../../assets/logo-nlw-esports.png';
+//COMPONENTES
 import { Heading } from '../../components/Heading';
 import { GameCards, GameCardsProps } from '../../components/GameCards';
+import { Background } from '../../components/Background';
+
+//REACT
+import { Image, FlatList, ScrollView } from 'react-native';
 import { useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Background } from '../../components/Background';
 import { useNavigation } from '@react-navigation/native';
+
+//OUTROS
+import { styles } from './styles';
+import logoImg from '../../assets/logo-nlw-esports.png';
 
 
 export function Home(){

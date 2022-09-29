@@ -1,6 +1,11 @@
-import { TouchableOpacity, View, Text } from 'react-native';
+//COMPONENTES
 import { DuoInfo } from '../DuoInfo';
+
+//REACT
+import { TouchableOpacity, View, Text } from 'react-native';
 import { GameController } from 'phosphor-react-native';
+
+//OUTROS
 import { styles } from './styles';
 import { THEME } from '../../theme';
 
