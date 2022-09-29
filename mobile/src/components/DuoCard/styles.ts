@@ -8,15 +8,22 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 20,
     marginRight: 16,
-    // alignItems: 'center'
+    alignItems: 'center'
   },
   button: {
+    backgroundColor: THEME.COLORS.PRIMARY,
     width: '100%',
     height: 36,
     flex: 1,
-    alignItems: 'center'
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 8
   },
   buttonTitle: {
-    color: THEME.COLORS.TEXT
+    color: THEME.COLORS.TEXT,
+    fontSize:  THEME.FONT_SIZE.SM,
+    fontFamily: THEME.FONT_FAMILY.SEMI_BOLD,
+    marginLeft: 8
   }
 });

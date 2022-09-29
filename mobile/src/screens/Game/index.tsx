@@ -4,7 +4,7 @@ import { useRoute, useNavigation } from '@react-navigation/native';
 import { useState, useEffect } from 'react';
 import { styles } from './styles';
 import { GameParams } from '../../@types/navegation';
-import { TouchableOpacity, View, Image, ScrollView, FlatList } from 'react-native';
+import { TouchableOpacity, View, Image, ScrollView, FlatList, Text } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { THEME } from '../../theme';
 import logoImg from '../../assets/logo-nlw-esports.png'
@@ -19,9 +19,11 @@ export function Game() {
   function returnHome (){
     navigation.goBack()
   }
+  
   const [infos, setInfos] = useState<DuoCardProps[]>([])
   const url = `http://192.168.0.3:3333/games/${game.id}[0]/ads` /*HOUSE 1*/ 
   const url2 = `http://192.168.15.165:3333/games/${game.id}/ads` /*HOUSE 2*/
+
   useEffect(() => {
     fetch(url2)
     .then(response => response.json())
@@ -44,7 +46,13 @@ export function Game() {
           />
           <View style={styles.right}/>
         </View>  
-        <ScrollView>
+
+
+        <ScrollView
+          style={styles.containerScroll}
+          contentContainerStyle={styles.contentScroll}
+          showsVerticalScrollIndicator={false}
+        >
           <Image
             source={{uri: game.bannerUrl}}
             style={styles.cover}
@@ -52,22 +60,26 @@ export function Game() {
           />   
           <Heading
             title={game.title}
-            subtitle='Conecte-se e comece a jogar'
+            subtitle='Conecte-se e comece a jogar!'
           />
           <FlatList 
             data={infos}
             keyExtractor={item => item.id}
             renderItem={({ item }) => (
-              <DuoCard data={item}/>        
+              <DuoCard 
+                onConnect={() => {}}
+                data={item}/>        
             )}
             horizontal
             showsHorizontalScrollIndicator={false}
-            
+            contentContainerStyle={[styles.contentList, infos.length === 0 && {flex: 1}]}
+            ListEmptyComponent={() => (
+              <Text style={styles.emptyList}>
+                Não há anúncios publicados.
+              </Text>
+            )}
           />
-        </ScrollView> 
-
-
-        
+        </ScrollView>        
       </SafeAreaView>
     </Background>
   )

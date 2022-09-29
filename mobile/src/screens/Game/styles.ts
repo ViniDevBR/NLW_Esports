@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
+import { THEME } from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center'
+    flex: 1
   },
   header: {
     width: '100%',
@@ -11,7 +11,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 32,
     marginTop: 28,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    paddingBottom: 15
   },
   logo: {
     width: 72,
@@ -22,9 +23,24 @@ export const styles = StyleSheet.create({
     height: 20
   },
   cover: {
-    width: 331,
+    width: 300,
     height: 160,
     borderRadius: 8,
-    marginTop: 32
+    marginTop: 32,
+  },
+  containerScroll: {
+    flex: 1
+  },
+  contentScroll: {
+    alignItems: 'center'
+  },
+  contentList: {
+    paddingHorizontal: 32,
+    marginBottom: 30
+  },
+  emptyList: {
+    color: THEME.COLORS.CAPTION_300,
+    fontSize: THEME.FONT_SIZE.SM,
+    fontFamily: THEME.FONT_FAMILY.REGULAR
   }
 });
