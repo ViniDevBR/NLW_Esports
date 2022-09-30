@@ -5,7 +5,7 @@ import { DuoInfo } from '../DuoInfo';
 import { TouchableOpacity, View, Text } from 'react-native';
 import { GameController } from 'phosphor-react-native';
 
-//OUTROS
+//STYLES
 import { styles } from './styles';
 import { THEME } from '../../theme';
 

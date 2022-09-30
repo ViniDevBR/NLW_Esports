@@ -1,5 +1,8 @@
-import { styles } from './styles';
+//REACT
 import { View, ActivityIndicator } from 'react-native';
+
+//STYLES
+import { styles } from './styles';
 import { THEME } from '../../theme';
 
 export function Loading(){

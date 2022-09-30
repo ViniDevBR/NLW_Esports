@@ -11,11 +11,13 @@ import { useState, useEffect } from 'react';
 import { TouchableOpacity, View, Image, ScrollView, FlatList, Text } from 'react-native';
 
 //OUTROS
-import { styles } from './styles';
 import { GameParams } from '../../@types/navegation';
 import { Entypo } from '@expo/vector-icons';
-import { THEME } from '../../theme';
 import logoImg from '../../assets/logo-nlw-esports.png'
+
+//STYLES
+import { styles } from './styles';
+import { THEME } from '../../theme';
 
 export function Game() {
   const navigation = useNavigation()
@@ -25,9 +27,15 @@ export function Game() {
   function returnHome (){
     navigation.goBack()
   }
+  async function getDiscordUser(adsId: string) {
+    const url3 = `http://192.168.15.165:3333/ads/${adsId}/discord`
+    await fetch(url3)
+    .then(response => response.json())
+    .then(data => setDiscordMatch(data.discord));
+  }
   
   const [infos, setInfos] = useState<DuoCardProps[]>([])
-  const [discordMatch, setDiscordMatch] = useState('vini')
+  const [discordMatch, setDiscordMatch] = useState('')
 
   const url = `http://192.168.0.3:3333/games/${game.id}[0]/ads` /*HOUSE 1*/ 
   const url2 = `http://192.168.15.165:3333/games/${game.id}/ads` /*HOUSE 2*/
@@ -78,7 +86,7 @@ export function Game() {
               keyExtractor={item => item.id}
               renderItem={({ item }) => (
                 <DuoCard 
-                  onConnect={() => {}}
+                  onConnect={() => getDiscordUser(item.id)}
                   data={item}/>        
               )}
               horizontal
@@ -94,7 +102,7 @@ export function Game() {
           <DuoMatch 
             onClose={() => setDiscordMatch('')}
             visible={discordMatch.length > 0}
-            discord='123321321123'
+            discord={discordMatch}
           />
         </ScrollView>        
       </SafeAreaView>

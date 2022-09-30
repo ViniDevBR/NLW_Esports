@@ -10,9 +10,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 
 //OUTROS
-import { styles } from './styles';
 import logoImg from '../../assets/logo-nlw-esports.png';
 
+//STYLES
+import { styles } from './styles';
 
 export function Home(){
   const url = 'http://192.168.0.3:3333/games' /*HOUSE 1*/ 

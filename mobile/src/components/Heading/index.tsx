@@ -1,4 +1,7 @@
+//REACT
 import { View, Text, ViewProps } from "react-native";
+
+//STYLES
 import { styles } from "./styles";
 
 interface Props extends ViewProps{

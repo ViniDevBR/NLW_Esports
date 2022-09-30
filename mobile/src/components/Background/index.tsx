@@ -1,5 +1,8 @@
-import { ImageBackground } from 'react-native';
+//STYLE
 import { styles } from './styles';
+
+//OUTROS
+import { ImageBackground } from 'react-native';
 import backgroundImg from '../../assets/background-galaxy.png'
 
 interface Props{
