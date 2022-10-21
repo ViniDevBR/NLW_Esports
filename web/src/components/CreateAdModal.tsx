@@ -1,11 +1,17 @@
+//RADIX UI
 import * as Dialog from '@radix-ui/react-dialog';
 import * as Checkbox from '@radix-ui/react-checkbox';
+
+//PHOSPHOR ICONS
 import { Check, GameController } from "phosphor-react";
 
+//COMPONENTES
 import { Input } from "./Form/Inputs";
 import { SelectGame } from './SelectGame/SelectGame';
+import { ButtonDays } from './Form/ButtonDays';
 
 export function CreateAdModal() {
+
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="bg-black/60 inset-0 fixed" />
@@ -21,10 +27,12 @@ export function CreateAdModal() {
             </label>
             <SelectGame />
           </div>
+
           <div className="flex flex-col gap-2">
             <label htmlFor="name">Seu nome (ou nickname)</label>
             <Input id="name" placeholder="Como te chamam dentro do game" />
           </div>
+
           <div className="grid grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
               <label htmlFor="yearsPlaying">Joga há quantos anos?</label>
@@ -34,38 +42,19 @@ export function CreateAdModal() {
                 placeholder="Tudo bem ser ZERO"
               />
             </div>
+
             <div className="flex flex-col gap-2">
               <label htmlFor="discord">Qual o seu Discord?</label>
               <Input id="discord" placeholder="usuario0000" />
             </div>
           </div>
+
           <div className="flex gap-6">
             <div className="flex flex-col gap-2">
               <label htmlFor="weekDays">Quando costuma jogar?</label>
-              <div className="grid grid-cols-4 gap-2">
-                <button className="w-8 h-8 rounded bg-zinc-900" title="Domingo">
-                  D
-                </button>
-                <button className="w-8 h-8 rounded bg-zinc-900" title="Segunda">
-                  S
-                </button>
-                <button className="w-8 h-8 rounded bg-zinc-900" title="Terça">
-                  T
-                </button>
-                <button className="w-8 h-8 rounded bg-zinc-900" title="Quarta">
-                  Q
-                </button>
-                <button className="w-8 h-8 rounded bg-zinc-900" title="Quinta">
-                  Q
-                </button>
-                <button className="w-8 h-8 rounded bg-zinc-900" title="Sexta">
-                  S
-                </button>
-                <button className="w-8 h-8 rounded bg-zinc-900" title="Sabado">
-                  S
-                </button>
-              </div>
+              <ButtonDays />
             </div>
+
             <div className="flex flex-1 flex-col gap-2">
               <label htmlFor="hourStart">Qual horario do dia?</label>
               <div className="grid grid-cols-2 gap-2">
@@ -74,14 +63,16 @@ export function CreateAdModal() {
               </div>
             </div>
           </div>
-          <div className="mt-2 flex items-center gap-2 text-sm">
+
+          <label className="mt-2 flex items-center gap-2 text-sm">
             <Checkbox.Root className='w-6 h-6 p-1 rounded bg-zinc-900'>
               <Checkbox.Indicator>
                 <Check className='w-4 h-4 text-emerald-400' />
               </Checkbox.Indicator>
             </Checkbox.Root>
             Costumo me conectar ao chat de voz
-          </div>
+          </label>
+
           <footer className="flex justify-end mt-4 gap-4">
             <Dialog.Close
               type="button"
@@ -89,6 +80,7 @@ export function CreateAdModal() {
             >
               Cancelar
             </Dialog.Close>
+
             <button
               className="bg-violet-500 px-5 h-12 rounded-md font-semibold flex items-center gap-2 hover:bg-violet-600"
               type="submit"

@@ -1,6 +1,7 @@
+//REACT
 import { useState, useEffect } from 'react';
 
-//RADIX
+//RADIX UI
 import * as Select from '@radix-ui/react-select'
 import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 
@@ -44,19 +45,17 @@ export function SelectGame() {
           <Select.Viewport
             className='cursor-pointer bg-zinc-900 rounded text-white'
           >
-          {games.map(game => {
-            return (
-              <SelectList 
-                key={game.id}
-                ItemText={game.title}
-                ItemValue={game.id}
-              />
-            )
-          })}
-
-           
+            {games.map(game => {
+              return (
+                <SelectList 
+                  key={game.id}
+                  ItemText={game.title}
+                  ItemValue={game.id}
+                />
+              )
+            })}
           </Select.Viewport>
-
+          
           <Select.ScrollDownButton />
         </Select.Content>
       </Select.Portal>
