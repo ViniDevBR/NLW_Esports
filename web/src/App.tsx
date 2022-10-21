@@ -1,10 +1,19 @@
+//REACT
 import { useState, useEffect } from 'react';
+
+// TAILWIND - POSTCSS
 import './styles/main.css';
+
+//IMG
 import logo from './assets/Logo.svg';
+
+//COMPONENTES
 import { GameBanner } from './components/GameBanner';
 import { CreateAdBanner } from './components/CreateAdBanner';
-import * as Dialog from '@radix-ui/react-dialog';
 import { CreateAdModal } from './components/CreateAdModal';
+
+//RADIX UI
+import * as Dialog from '@radix-ui/react-dialog';
 
 export interface Game{
   id: string,
