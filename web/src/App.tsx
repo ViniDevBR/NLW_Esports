@@ -15,6 +15,9 @@ import { CreateAdModal } from './components/CreateAdModal';
 //RADIX UI
 import * as Dialog from '@radix-ui/react-dialog';
 
+//AXIOS
+import axios from 'axios';
+
 export interface Game{
   id: string,
   bannerUrl: string,
@@ -29,10 +32,8 @@ function App() {
   const [games, setGames] = useState<Game[]>([])
   
   useEffect(() => {
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      setGames(data)
+    axios(url).then(response => {
+      setGames(response.data)
     })
   }, [])
   return (
