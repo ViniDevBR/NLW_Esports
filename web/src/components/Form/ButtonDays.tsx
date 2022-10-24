@@ -2,10 +2,15 @@
 import * as ToggleGroup from '@radix-ui/react-toggle-group'
 
 //REACT
-import { useState } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 
-export function ButtonDays() {
-  const [day, setDay] = useState<string[]>([])
+interface IButton {
+  day: string[]
+  setDay: Dispatch<SetStateAction<string[]>>
+}
+
+export function ButtonDays({ day, setDay }: IButton) {
+  // console.log(day)
 
   return (
     <ToggleGroup.Root
@@ -83,7 +88,6 @@ export function ButtonDays() {
       >
         S
       </ToggleGroup.Item>
-
     </ToggleGroup.Root>
   )
 }

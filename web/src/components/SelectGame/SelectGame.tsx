@@ -1,5 +1,5 @@
 //REACT
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 
 //RADIX UI
 import * as Select from '@radix-ui/react-select'
@@ -11,7 +11,12 @@ import { SelectList } from './SelectList'
 //INTERFACE
 import { Game } from '../../App';
 
-export function SelectGame() {
+interface IGameName {
+  gameName: string
+  setGameName: Dispatch<SetStateAction<string>>
+}
+
+export function SelectGame({ gameName, setGameName}: IGameName) {
   const url = 'http://localhost:3333/games'
   const [games, setGames] = useState<Game[]>([])
   
@@ -22,9 +27,9 @@ export function SelectGame() {
       setGames(data)
     })
   }, [])
-
+  
   return (
-    <Select.Root>
+    <Select.Root onValueChange={setGameName}>
       <Select.Trigger 
         className='flex items-center justify-between bg-zinc-900 py-3 px-4 rounded text-sm text-white'
         aria-label="Seleção dos games"
@@ -45,9 +50,9 @@ export function SelectGame() {
           <Select.Viewport
             className='cursor-pointer bg-zinc-900 rounded text-white'
           >
-            {games.map(game => {
+            {games?.map(game => {
               return (
-                <SelectList 
+                <SelectList
                   key={game.id}
                   ItemText={game.title}
                   ItemValue={game.id}

@@ -3,7 +3,7 @@ import * as Select from '@radix-ui/react-select'
 import { CheckIcon } from '@radix-ui/react-icons'
 
 interface ListProps {
- ItemText: string;
+ ItemText: string
  ItemValue: string
 }
 
