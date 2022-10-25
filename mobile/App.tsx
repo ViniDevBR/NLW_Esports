@@ -1,6 +1,7 @@
 //COMPONENTES
 import { Background } from './src/components/Background';
 import { Loading } from './src/components/Loading';
+import { Routes } from './src/routes';
 
 //REACT
 import { StatusBar } from 'react-native';
@@ -11,7 +12,6 @@ import {
   Inter_700Bold,
   Inter_900Black
 } from "@expo-google-fonts/inter";
-import { Routes } from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
